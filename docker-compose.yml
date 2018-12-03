@@ -1,0 +1,84 @@
+version: "3"
+
+services:
+
+  cli0:
+    image: clinode:latest
+    container_name: cli0
+    hostname: cli0
+    ports:
+      - "10331-10334:10331-10334"
+    networks:
+      - nodeLink
+    volumes:
+      - "/u01/NEO/github:/home/data"
+    stdin_open: true
+    tty: true
+    entrypoint: sh /home/data/start-cli.sh
+
+  cli1:
+    image: clinode:latest
+    container_name: cli1
+    hostname: cli1
+    ports:
+      - "10335-10338:10331-10334"
+    networks:
+      - nodeLink
+    volumes:
+      - "/u01/NEO/github:/home/data"
+    stdin_open: true
+    tty: true
+    entrypoint: sh /home/data/start-cli.sh
+    depends_on:
+      - cli0
+
+  cli2:
+    image: clinode:latest
+    container_name: cli2
+    hostname: cli2
+    ports:
+    ports:
+      - "20331-20334:10331-10334"
+    networks:
+      - nodeLink
+    volumes:
+      - "/u01/NEO/github:/home/data"
+    stdin_open: true
+    tty: true
+    entrypoint: sh /home/data/start-cli.sh
+    depends_on:
+      - cli1
+
+  cli3:
+    image: clinode:latest
+    container_name: cli3
+    hostname: cli3
+    ports:
+      - "20335-20338:10331-10334"
+    networks:
+      - nodeLink
+    volumes:
+      - "/u01/NEO/github:/home/data"
+    stdin_open: true
+    tty: true
+    entrypoint: sh /home/data/start-cli.sh
+    depends_on:
+      - cli2
+
+  cli4:
+    image: clinode:latest
+    container_name: cli4
+    ports:
+      - "30331-30334:10331-10334"
+    networks:
+      - nodeLink
+    volumes:
+      - "/u01/NEO/github:/home/data"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - cli3
+
+networks:
+  nodeLink:
+    driver: bridge
