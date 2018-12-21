@@ -1,13 +1,14 @@
 ﻿{
   "ProtocolConfiguration": {
+    "NetworkType": "LAN",
     "Magic": 7630401,
     "AddressVersion": 23,
     "SecondsPerBlock": 15, 
     "StandbyValidators": [
-      "0249b419692a17fb519c3b42ffbe82ae34855a45e54783a9bc940135b1c2753ece",
-      "03298a54cdfb2b5ffae0638c60633de24e3956b76a44867475e81db5ce87b2a16b",
-      "02b795b3322f0a171c7e7658371131c0caa77a9279818b85b9d0728a5a63452ff8",
-      "0366440bd2a1fe4e0d1dcb9bf35995c5c6e858af846abef145064ab2b5e8ebfce8"
+      "025178aa02ccb9a30c74c0e9771ed60d771710625e41d1ae37a192a6db2c00e7d6",
+      "02ade1a21bd7d90b88299e7e1fef91c12fdc9988ad9100816d3b50cb6090fd88a2",
+      "02f0a7538d3aa6fc6a91315c5842733820df5b4ec1e4f273adc5d36eebd0f7463a",
+      "03f35c16c5e8837697b9263f44f62be58c058562e76b033ed29a2223792901f6b1"
     ],
     "SeedList": [
       "cli0:10333",
@@ -16,9 +17,7 @@
       "cli3:10333",
     ],
     "SystemFee": {
-      "EnrollmentTransaction": 10,
       "IssueTransaction": 5,
-      "PublishTransaction": 5,
       "RegisterTransaction": 100
     }
   }
